@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>จดหมายถึงเธอ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sriracha&family=Mali:wght@400;500&family=Itim&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<!-- หน้าซองจดหมาย -->
+<div id="cover">
+  <p class="to" id="to"></p>
+  <div class="envelope">
+    <div class="env-back"></div>
+    <div class="env-letter">♡</div>
+    <div class="env-front"></div>
+    <div class="env-flap"></div>
+    <button class="seal" id="seal" type="button" aria-label="เปิดจดหมาย"><img src="rose-red.webp" alt=""></button>
+  </div>
+  <p class="hint" id="coverHint"></p>
+</div>
+
+<main>
+  <!-- จดหมาย -->
+  <section>
+    <article class="letter">
+      <img class="corner2" src="rose-white.webp" alt="">
+      <img class="corner" src="rose-red.webp" alt="">
+      <h1 id="letterTitle"></h1>
+      <div id="letterBody"></div>
+    </article>
+  </section>
+
+  <!-- รูปความทรงจำ -->
+  <section class="reveal pending">
+    <h2 id="momentsTitle"></h2>
+    <div class="strip" id="strip"></div>
+  </section>
+
+  <!-- คำสัญญา -->
+  <section class="reveal pending">
+    <h2 id="promisesTitle"></h2>
+    <p class="sub" id="promisesHint"></p>
+    <div class="promises" id="promises"></div>
+  </section>
+
+  <!-- คำถาม -->
+  <section id="ask" class="reveal pending">
+    <div class="ask-roses"><img src="rose-white.webp" alt=""><img src="rose-red.webp" alt=""><img src="rose-white.webp" alt=""></div>
+    <h2 id="question"></h2>
+    <div class="btns" id="btns">
+      <button class="yes" id="yes" type="button"></button>
+      <button class="no" id="no" type="button"></button>
+    </div>
+  </section>
+</main>
+
+<!-- หลังกดตกลง -->
+<div id="yay" role="dialog" aria-modal="true" aria-labelledby="yesTitle">
+  <div class="yay-in">
+    <div class="bouquet">
+      <img src="rose-white.webp" alt="" style="width:110px;left:0;top:40px;transition-delay:.2s">
+      <img src="rose-white.webp" alt="" style="width:110px;right:0;top:40px;transition-delay:.35s">
+      <img src="rose-red.webp" alt="" style="width:150px;left:35px;top:0;transition-delay:.05s">
+    </div>
+    <h2 id="yesTitle"></h2>
+    <p id="yesText"></p>
+    <button class="vbtn" id="vbtn" type="button"></button>
+    <button class="again" id="again" type="button">อ่านอีกครั้ง</button>
+  </div>
+</div>
+
+<div class="veil" id="lightbox">
+  <div class="lb"><img id="lbImg" alt=""><p id="lbCap"></p></div>
+  <button class="close" id="lbclose" type="button" aria-label="ปิด">✕</button>
+</div>
+<div class="veil" id="videoVeil">
+  <video id="vid" playsinline controls preload="metadata"></video>
+  <button class="close" id="vclose" type="button" aria-label="ปิด">✕</button>
+</div>
+
+<audio id="music" loop preload="auto"></audio>
+<button class="musicbtn" id="musicBtn" type="button" aria-label="เปิด/ปิดเพลง" hidden>♪</button>
+
+<!-- ข้อความทั้งหมดแก้ที่ config.js -->
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
